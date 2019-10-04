@@ -17,12 +17,12 @@
     "tslint-immutable": "6.0.1"
   },
   "devDependencies": {
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   },
   "author": "Samwise Technology, Inc. <icunningham@samwise.com>",
   "license": "MIT",
