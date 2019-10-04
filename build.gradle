@@ -12,9 +12,24 @@ node {
     download = true
 }
 
+task installRegistry(type: NpmTask) {
+    description "Installs NPM registry"
+    args = [
+        "config",
+        "set",
+        "registry",
+        "//registry.npmjs.org/:_authToken=${System.getenv('NPM_TOKEN')}"
+    ]
+}
+
 task runTests(type: YarnTask, dependsOn: "yarn_install") {
     description "Run tests"
     args = ["run", "test"]
+}
+
+task runPublish(type: NpmTask, dependsOn: "yarn_install") {
+    description "Publish package"
+    args = ["publish"]
 }
 
 clean {
