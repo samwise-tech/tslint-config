@@ -6,10 +6,11 @@ branches:
     - master
 
 before_install:
+  - printf "npm_token=${NPM_TOKEN}" >> gradle.properties
   - ./gradlew installRegistry
 
 script:
   - ./gradlew runTests
 
 after_success:
- - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./gradlew runPublish
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./gradlew runPublish

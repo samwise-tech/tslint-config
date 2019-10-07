@@ -22,3 +22,4 @@ node_modules/
 ### Gradle
 .gradle
 gradle_build
+gradle.properties
