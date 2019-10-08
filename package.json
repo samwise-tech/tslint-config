@@ -1,6 +1,6 @@
 {
   "name": "@samwise-tech/tslint-config",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Samwise Technology TSLint configuration",
   "main": "tslint.json",
   "scripts": {
