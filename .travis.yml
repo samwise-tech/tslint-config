@@ -1,6 +1,4 @@
-language: node_js
-node_js:
-  - '6'
+language: java
 
 branches:
   only:
@@ -8,7 +6,11 @@ branches:
     - master
 
 before_install:
-  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" >> .npmrc
+  - printf "npm_token=${NPM_TOKEN}" >> gradle.properties
+  - ./gradlew installRegistry
+
+script:
+  - ./gradlew runTests
 
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && npm publish
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./gradlew runPublish
