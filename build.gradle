@@ -17,8 +17,7 @@ task installRegistry(type: NpmTask) {
     args = [
         "config",
         "set",
-        "registry",
-        "https://registry.npmjs.org/:_authToken=${npm_token}"
+        "//registry.npmjs.org/:_authToken=${npm_token}"
     ]
 }
 
