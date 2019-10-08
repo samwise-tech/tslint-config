@@ -6,6 +6,7 @@ test/
 .gitignore
 .idea
 
+.gradle
 gradle
 build.gradle
 gradlew
